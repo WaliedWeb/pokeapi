@@ -1,7 +1,28 @@
-import Example from './components/Example'
+import Card from './components/Card'
 import { getBySelector } from './lib/dom'
 import './styles/index.css'
 
-const example = Example('Vite Starter')
+const url = 'https://pokeapi.co/api/v2/pokemon'
 
-getBySelector('#app').append(example)
+fetch(url)
+  .then(res => res.json())
+  .then(data => renderCards(data.results))
+
+function renderCards(pokemons) {
+  const container = getBySelector('#cards-container')
+
+  pokemons.forEach(({ url }) => {
+    fetch(url)
+      .then(res => res.json())
+      .then(({ name, sprites, weight, moves }) => {
+        container.append(
+          Card({
+            name,
+            image: sprites.front_default,
+            weight,
+            moves: moves[1].move.name,
+          })
+        )
+      })
+  })
+}
