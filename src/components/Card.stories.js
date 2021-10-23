@@ -7,7 +7,11 @@ export default {
 
 export const Default = () =>
   Card({
-    name: 'Rick Sanchez',
-    image: 'https://source.unsplash.com/400x400/?comic',
-    location: 'Earth',
+    name: 'ivysaur',
+    weight: '130',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png',
+    moves: 'Atakke',
+    height: '23',
+    types: 'poison',
   })

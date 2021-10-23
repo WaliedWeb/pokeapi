@@ -14,13 +14,15 @@ function renderCards(pokemons) {
   pokemons.forEach(({ url }) => {
     fetch(url)
       .then(res => res.json())
-      .then(({ name, sprites, weight, moves }) => {
+      .then(({ name, sprites, weight, moves, height, types }) => {
         container.append(
           Card({
             name,
             image: sprites.front_default,
             weight,
             moves: moves[1].move.name,
+            height,
+            types: types[1].type.name,
           })
         )
       })
