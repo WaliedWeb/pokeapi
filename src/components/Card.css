@@ -8,10 +8,13 @@
   box-shadow: 8px;
   height: 500px;
   width: 300px;
+  margin: 20px;
 }
 
 .Card__image {
   width: 100%;
+  background-color: #ebf4fb;
+  border-radius: 20px;
 }
 
 .Card__heading {
@@ -21,7 +24,6 @@
 
 .Card__text {
   height: 120px;
-  background-color: red;
   display: flex;
   flex-direction: column;
   align-items: center;

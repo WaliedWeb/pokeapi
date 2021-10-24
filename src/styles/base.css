@@ -19,3 +19,9 @@ button,
 textarea {
   font: inherit;
 }
+
+.body {
+  display: grid;
+  justify-content: center;
+  padding: 0;
+}
