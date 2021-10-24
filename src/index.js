@@ -1,3 +1,4 @@
+import button from './components/button'
 import Card from './components/Card'
 import { getBySelector } from './lib/dom'
 import './styles/index.css'
@@ -14,7 +15,7 @@ function renderCards(pokemons) {
   pokemons.forEach(({ url }) => {
     fetch(url)
       .then(res => res.json())
-      .then(({ name, sprites, weight, moves, height, types }) => {
+      .then(({ name, sprites, weight, moves, height, types /*imageBack*/ }) => {
         container.append(
           Card({
             name,
@@ -22,8 +23,10 @@ function renderCards(pokemons) {
             weight,
             moves: moves[1].move.name,
             height,
-            types: types[1].type.name,
-          })
+            types: types[0].type.name,
+            //imageBack: sprites.back_default,
+          }),
+          button()
         )
       })
   })

@@ -3,12 +3,21 @@ import './Card.css'
 
 // destructuring assignment
 
-export default function Card({ image, name, weight, moves, height, types }) {
+export default function Card({
+  image,
+  name,
+  weight,
+  moves,
+  height,
+  types,
+  imageBack,
+}) {
   const el = createElement('section', {
     className: 'Card',
     innerHTML: `
         <h2 class="Card__heading">${name}</h2>
-        <img class="Card__image" src="${image}" alt="" />
+        <img data-js="Cardimage" class="Card__image" src="${image}" alt="" />
+        <img data-js="CardBackimage" class="Card__image hidden" src="${imageBack}" alt="" />
         <div class= "Card__text">
         <spam>  height / weight : ${height}cm / ${weight}kg</spam>
         <spam>  move of pokemon: ${moves}</spam>
@@ -16,6 +25,6 @@ export default function Card({ image, name, weight, moves, height, types }) {
         </div>
     `,
   })
-
+  el.dataset.js = 'Card'
   return el
 }
