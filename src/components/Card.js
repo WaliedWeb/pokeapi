@@ -22,6 +22,7 @@ export default function Card({
         <spam>  height / weight : ${height}cm / ${weight}kg</spam>
         <spam>  move of pokemon: ${moves}</spam>
         <spam>  type of pokemon: ${types}</spam>
+        <button data-js="Card__button" > turn it! </button>
         </div>
     `,
   })

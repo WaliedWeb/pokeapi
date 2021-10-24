@@ -1,15 +1,11 @@
-import './button.css'
-import { createElement } from '../lib/dom.js'
+/*import './button.css'
 
 export default function button() {
-  const button = createElement('button', {
-    className: 'button js-button',
-    innerText: 'turn',
-  })
+  const Card = document.querySelector('[data-js="Card"]')
+  const button = Card.querySelector('[data-js="Card__button"]')
+  const frontImage = Card.querySelector('[data-js="Cardimage"]')
+  const backImage = Card.querySelector('[data-js="CardBackimage"]')
 
-  button.addEventListener('click', () => {
-    console.log('test')
-    button.classList.toggle('bg-blue')
-  })
-  return button
+  Card.forEach(button.addEventListener('click', () => console.log('Hey')))
 }
+*/

@@ -1,4 +1,3 @@
-import button from './components/button'
 import Card from './components/Card'
 import { getBySelector } from './lib/dom'
 import './styles/index.css'
@@ -25,9 +24,16 @@ function renderCards(pokemons) {
             height,
             types: types[0].type.name,
             //imageBack: sprites.back_default,
-          }),
-          button()
+          })
         )
       })
   })
 }
+
+function button() {
+  const Card = document.querySelector('[data-js="Card"]')
+  const button = Card.querySelector('[data-js="Card__button"]')
+
+  Card.forEach(button.addEventListener('click', () => console.log('Hey')))
+}
+button()
