@@ -2,7 +2,7 @@ import Card from './components/Card'
 import { getBySelector } from './lib/dom'
 import './styles/index.css'
 
-const url = 'https://pokeapi.co/api/v2/pokemon'
+const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
 fetch(url)
   .then(res => res.json())
@@ -14,7 +14,7 @@ function renderCards(pokemons) {
   pokemons.forEach(({ url }) => {
     fetch(url)
       .then(res => res.json())
-      .then(({ name, sprites, weight, moves, height, types }) => {
+      .then(({ name, sprites, weight, moves, height, types, id }) => {
         container.append(
           Card({
             name,
@@ -24,16 +24,11 @@ function renderCards(pokemons) {
             height,
             types: types[0].type.name,
             imageBack: sprites.back_default,
+            shinyFront: sprites.front_shiny,
+            shinyBack: sprites.back_shiny,
+            id,
           })
         )
       })
   })
 }
-
-function button() {
-  const Card = document.querySelector('[data-js="Card"]')
-  const button = Card.querySelector('[data-js="Card__button"]')
-
-  Card.forEach(button.addEventListener('click', () => console.log('Hey')))
-}
-button()

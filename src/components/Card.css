@@ -33,3 +33,7 @@
 .hidden {
   display: none;
 }
+
+.rotate {
+  transform: rotateY(180deg);
+}
