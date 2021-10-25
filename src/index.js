@@ -22,9 +22,18 @@ function renderCards(pokemons) {
             weight,
             moves: moves[1].move.name,
             height,
-            types: types[1].type.name,
+            types: types[0].type.name,
+            imageBack: sprites.back_default,
           })
         )
       })
   })
 }
+
+function button() {
+  const Card = document.querySelector('[data-js="Card"]')
+  const button = Card.querySelector('[data-js="Card__button"]')
+
+  Card.forEach(button.addEventListener('click', () => console.log('Hey')))
+}
+button()
