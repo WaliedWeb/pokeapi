@@ -14,7 +14,7 @@ function renderCards(pokemons) {
   pokemons.forEach(({ url }) => {
     fetch(url)
       .then(res => res.json())
-      .then(({ name, sprites, weight, moves, height, types /*imageBack*/ }) => {
+      .then(({ name, sprites, weight, moves, height, types }) => {
         container.append(
           Card({
             name,
@@ -23,7 +23,7 @@ function renderCards(pokemons) {
             moves: moves[1].move.name,
             height,
             types: types[0].type.name,
-            //imageBack: sprites.back_default,
+            imageBack: sprites.back_default,
           })
         )
       })

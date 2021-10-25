@@ -26,6 +26,16 @@ export default function Card({
         </div>
     `,
   })
+
+  const button = el.querySelector('[data-js="Card__button"]')
+  const frontImage = el.querySelector('[data-js="Cardimage"]')
+  const backImage = el.querySelector('[data-js="CardBackimage"]')
+
+  button.addEventListener('click', () => {
+    frontImage.classList.toggle('hidden')
+    backImage.classList.toggle('hidden')
+  })
+
   el.dataset.js = 'Card'
   return el
 }
